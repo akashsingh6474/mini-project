@@ -23,13 +23,13 @@ _I'd love for you to make the most of this project - it's all about learning, he
 1. **Fork and Clone the Repository**
 
    ```bash
-   git clone https://github.com/{your-username}/wanderlust.git
+   git clone https://github.com/akashsingh6474/wanderlust.git
    ```
 
 2. **Navigate to the Backend Directory**
 
    ```bash
-   cd backend
+     cd wanderlust/backend
    ```
 
 3. **Install Required Dependencies**
@@ -40,23 +40,33 @@ _I'd love for you to make the most of this project - it's all about learning, he
 
 4. **Set up your MongoDB Database**
 
+   Ensure MongoDB is running locally on your machine. You can start it with:
+   ```bash
+   mongod
+   ```
    - Open MongoDB Compass and connect MongoDB locally at `mongodb://localhost:27017`.
 
-5. **Import sample data**
+6. **Import sample data**
 
-   > To populate the database with sample posts, you can copy the content from the `backend/data/sample_posts.json` file and insert it as a document in the `wanderlust/posts` collection in your local MongoDB database using either MongoDB Compass or `mongoimport`.
+Using MongoDB Compass (GUI):
+Navigate to the wanderlust/posts collection in your MongoDB instance.
+Insert the contents of backend/data/sample_posts.json into the collection.
 
-   ```bash
-   mongoimport --db wanderlust --collection posts --file ./data/sample_posts.json --jsonArray
-   ```
+Using Mongoimport (CLI):
+Run the following command:
+```bash
+ mongoimport --db wanderlust --collection posts --file ./data/sample_posts.json --jsonArray
 
-6. **Configure Environment Variables**
+```
+
+
+8. **Configure Environment Variables**
 
    ```bash
    cp .env.sample .env
    ```
 
-7. **Start the Backend Server**
+9. **Start the Backend Server**
 
    ```bash
    npm start
@@ -95,32 +105,31 @@ _I'd love for you to make the most of this project - it's all about learning, he
    npm run dev
    ```
 
-### Setting up with Docker
+Docker Setup
+If you prefer to set up the project using Docker, follow these steps:
 
-1.  **Ensure Docker and Docker Compose are Installed**
-    
-2.  **Clone the Repository**
-    
-   ``` bash
-    
-    git clone https://github.com/{your-username}/wanderlust.git
-   ``` 
-3.  **Navigate to the Project Directory**
-    
-    ```bash
-    
-    cd wanderlust
-    
-    ```
-4.  **Update Environment Variables**  - If you anticipate the IP address of the instance might change, update the `.env.sample` file with the new IP address.
+1. Ensure Docker and Docker Compose are Installed
+Install Docker
+Install Docker Compose
+2. Clone the Repository
+```bash
+git clone https://github.com/akashsingh6474/wanderlust.git
+```
+3. Navigate to the Project Directory
+```bash
+cd wanderlust
+```
+4. Update Environment Variables
+If the IP address of your instance might change, update the .env.sample file with the correct IP address.
 
-5.  **Run Docker Compose**
-    
-    ```bash
-    
-    docker-compose up
-    ```
-    This command will build the Docker images and start the containers for the backend and frontend, enabling you to access the Wanderlust application.
+5. Run Docker Compose
+```bash
+docker-compose up
+```
+
+Build the Docker images for both backend and frontend.
+Start the containers for the application.
+Once Docker Compose finishes building and starting the containers, you can access the Wanderlust application in your browser.
 
 ## 🌟 Ready to Contribute?
 
